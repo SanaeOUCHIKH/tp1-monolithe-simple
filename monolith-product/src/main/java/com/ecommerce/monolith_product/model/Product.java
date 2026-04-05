@@ -30,4 +30,9 @@ public class Product {
     @PositiveOrZero(message = "Stock cannot be negative")
     @Column(nullable = false)
     private Integer stock;
+
+    // Relation ManyToOne ajoutée pour l'exercice
+    @ManyToOne
+    @JoinColumn(name = "category_id") // Crée la clé étrangère dans la table products
+    private Category category;
 }
